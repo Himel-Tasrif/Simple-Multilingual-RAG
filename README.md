@@ -1,1 +1,1 @@
-This Repo is for 10 Min School
+This Repo is for 10 Min School and developed by Tasrif Nur Himel
