@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel | Knowledge Base Management</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <header>
+            <a href="/" class="back-home"><i class="fa fa-arrow-left"></i> Home</a>
+            <h1><i class="fa fa-database"></i> Knowledge Base Admin</h1>
+            <p>Upload your PDF, generate a vector database, and manage files for the RAG system.</p>
+        </header>
+        <main>
+            <section class="card upload-card">
+                <h2><i class="fa fa-upload"></i> Upload PDF</h2>
+                <label for="pdf-upload">Select PDF file</label>
+                <input type="file" id="pdf-upload" accept=".pdf">
+                <button id="uploadBtn"><i class="fa fa-cloud-upload"></i> Upload PDF</button>
+            </section>
+            <section class="card table-card">
+                <h2><i class="fa fa-folder-open"></i> Uploaded PDFs</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>PDF Name</th>
+                            <th>Download</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pdfTableBody">
+                        <!-- Filled by JS -->
+                    </tbody>
+                </table>
+            </section>
+            <section class="card vector-card">
+                <h2><i class="fa fa-bolt"></i> Generate Vector Database</h2>
+                <button id="generateDB"><i class="fa fa-cube"></i> Generate Vector DB</button>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2025 10 Minute School | AI Engineer Assessment</p>
+        </footer>
+    </div>
+    <script src="/static/js/admin.js"></script>
+</body>
+</html>
