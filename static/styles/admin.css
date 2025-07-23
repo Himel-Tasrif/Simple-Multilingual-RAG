@@ -1,0 +1,130 @@
+body {
+    font-family: 'Nunito', Arial, sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    margin: 0;
+    color: #fff;
+}
+.admin-wrapper {
+    max-width: 800px;
+    margin: 32px auto;
+    background: rgba(255,255,255,0.08);
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.16);
+    padding: 24px;
+}
+header {
+    text-align: center;
+    margin-bottom: 32px;
+    position: relative;
+}
+header h1 {
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+    letter-spacing: 1px;
+}
+header p {
+    font-size: 1rem;
+    color: #e3e3e3;
+}
+.back-home {
+    position: absolute;
+    left: 24px;
+    top: 24px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    background: rgba(0,0,0,0.11);
+    padding: 6px 16px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+.back-home:hover {
+    background: #6a11cb;
+    color: #fff;
+}
+.card {
+    background: rgba(0,0,0,0.17);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.11);
+}
+.upload-card h2, .table-card h2, .vector-card h2 {
+    margin-bottom: 18px;
+    font-size: 1.3rem;
+    color: #e2dfff;
+}
+label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: inline-block;
+    color: #d4d4d4;
+}
+input[type="file"] {
+    width: 100%;
+    margin-bottom: 12px;
+    background: #fff;
+    padding: 11px;
+    border-radius: 8px;
+    border: none;
+}
+button {
+    background: #6a11cb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 0;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 6px;
+    box-shadow: 0 2px 8px rgba(106,17,203,0.13);
+    transition: background 0.15s, transform 0.15s;
+}
+button:hover {
+    background: #4c0c9b;
+    transform: scale(1.03);
+}
+.table-card table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.95);
+    color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.table-card th, .table-card td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+.table-card th {
+    background: #6a11cb;
+    color: #fff;
+    font-weight: 700;
+}
+.download-link {
+    background: #4c0c9b;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background 0.18s;
+}
+.download-link:hover {
+    background: #6a11cb;
+}
+footer {
+    text-align: center;
+    margin-top: 18px;
+    color: #eee;
+    font-size: 13px;
+}
+@media (max-width: 600px) {
+    .admin-wrapper {
+        padding: 8px;
+        max-width: 98vw;
+    }
+}

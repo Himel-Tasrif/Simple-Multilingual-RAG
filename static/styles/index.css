@@ -1,0 +1,53 @@
+body {
+    background: linear-gradient(135deg, #80000d, #555555);
+    font-family: 'Nunito', Arial, sans-serif;
+    margin: 0;
+    color: #fff;
+}
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.07);
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+    padding: 32px;
+}
+.logo {
+    max-width: 80px;
+    margin-bottom: 16px;
+}
+header {
+    text-align: center;
+}
+.card-row {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    margin: 32px 0;
+}
+.card {
+    background: rgba(0,0,0,0.16);
+    border-radius: 12px;
+    padding: 32px 24px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    width: 220px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+.card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.19);
+    background: rgba(154, 240, 227, 0.23);
+}
+.card i {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #eee;
+    font-size: 13px;
+}
