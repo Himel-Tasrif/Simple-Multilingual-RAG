@@ -18,7 +18,14 @@
             <section class="card upload-card">
                 <h2><i class="fa fa-upload"></i> Upload PDF</h2>
                 <label for="pdf-upload">Select PDF file</label>
-                <input type="file" id="pdf-upload" accept=".pdf">
+                <input type="file" id="pdf-upload" accept=".pdf" multiple>
+                <!-- Selected files list -->
+                <ul id="selectedFilesList" style="margin:8px 0 0 0; padding:0; color:#e2dfff; font-size:0.95rem;"></ul>
+                <!-- Upload progress -->
+                <div id="uploadProgress" style="margin:8px 0 0 0; display:none;">
+                    <span id="progressText"></span>
+                    <span id="progressBar" style="display:inline-block; vertical-align:middle;"></span>
+                </div>
                 <button id="uploadBtn"><i class="fa fa-cloud-upload"></i> Upload PDF</button>
             </section>
             <section class="card table-card">
@@ -37,7 +44,14 @@
             </section>
             <section class="card vector-card">
                 <h2><i class="fa fa-bolt"></i> Generate Vector Database</h2>
+                <!-- Vector DB progress -->
+                <div id="vectorProgress" style="margin:8px 0 0 0; display:none;">
+                    <span id="vectorProgressText"></span>
+                    <span id="vectorProgressBar" style="display:inline-block; vertical-align:middle;"></span>
+                </div>
                 <button id="generateDB"><i class="fa fa-cube"></i> Generate Vector DB</button>
+                <!-- PDFs used for vector DB -->
+                <div id="pdfsUsedInfo" style="margin:8px 0 0 0; color:#e2dfff; font-size:0.98rem;"></div>
             </section>
         </main>
         <footer>

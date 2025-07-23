@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwen Chat Interface</title>
+    <link rel="stylesheet" href="/static/styles/chat.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" fill="#7c3aed"/>
+                            <path d="M8 12h8M12 8v8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span>Qwen</span>
+                </div>
+                
+            </div>
+
+            <button class="new-chat-btn" id="newChatBtn">
+                <i class="fas fa-plus"></i>
+                <span>New Chat</span>
+            </button>
+
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search" class="search-input">
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="top-bar">
+                <div class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <div id="statusMessage" style="display:none;position:relative;margin:8px 0 0 18px;font-size:1rem;"></div>
+
+                <div class="model-info">
+                    <span class="model-name">Onupom_v1</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="top-actions">
+                    <button class="top-action-btn">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                    <div class="user-avatar">
+                        <span>T</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Welcome Screen -->
+            <div class="welcome-screen" id="welcomeScreen">
+                <div class="welcome-content">
+                    <h1 class="greeting">Good evening, How can i assist you today? </h1>
+                    
+                    <div class="input-container">
+                        <div class="main-input-wrapper">
+                            <textarea 
+                                id="mainInput" 
+                                placeholder="How can I help you today?"
+                                rows="1"
+                            ></textarea>
+                            <div class="input-actions">
+                                <button class="input-action-btn" title="Add">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                                <button class="input-action-btn thinking-btn" title="Thinking">
+                                    <i class="fas fa-brain"></i>
+                                    <span>Thinking</span>
+                                </button>
+                                <button class="input-action-btn search-btn" title="Search">
+                                    <i class="fas fa-search"></i>
+                                    <span>Search</span>
+                                </button>
+                                <button class="send-btn" id="sendBtn">
+                                    <i class="fas fa-arrow-up"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="capability-tags">
+                        <div class="capability-tag">
+                            <i class="fas fa-globe"></i>
+                            <span>Web Dev</span>
+                        </div>
+                        <div class="capability-tag">
+                            <i class="fas fa-search"></i>
+                            <span>Deep Research</span>
+                        </div>
+                        <div class="capability-tag">
+                            <i class="fas fa-image"></i>
+                            <span>Image Generation</span>
+                        </div>
+                        <div class="capability-tag">
+                            <span>More</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages" style="display: none;">
+                <!-- Messages will be inserted here -->
+            </div>
+
+            <!-- Bottom Input (for conversation mode) -->
+            <div class="bottom-input-container" id="bottomInputContainer" style="display: none;">
+                <div class="capability-tags">
+                    <div class="capability-tag">
+                        <i class="fas fa-globe"></i>
+                        <span>Web Dev</span>
+                    </div>
+                    <div class="capability-tag">
+                        <i class="fas fa-image"></i>
+                        <span>Image Generation</span>
+                    </div>
+                    <div class="capability-tag">
+                        <i class="fas fa-video"></i>
+                        <span>Video Generation</span>
+                    </div>
+                    <div class="capability-tag">
+                        <i class="fas fa-cube"></i>
+                        <span>Artifacts</span>
+                    </div>
+                </div>
+
+                <div class="bottom-input-wrapper">
+                    <textarea 
+                        id="bottomInput" 
+                        placeholder="Write your query here..."
+                        rows="1"
+                    ></textarea>
+                    <div class="bottom-input-actions">
+                        <button class="input-action-btn" title="Add">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <button class="input-action-btn thinking-btn" title="Thinking">
+                            <i class="fas fa-brain"></i>
+                            <span>Thinking</span>
+                        </button>
+                        <button class="input-action-btn search-btn" title="Search">
+                            <i class="fas fa-search"></i>
+                            <span>Search</span>
+                        </button>
+                        <button class="send-btn" id="bottomSendBtn">
+                            <i class="fas fa-arrow-up"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bottom-disclaimer">
+                    <span>AI-generated content may not be accurate.</span>
+                    <button class="scroll-to-top" id="scrollToTop">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/chat.js"></script>
+</body>
+</html>
