@@ -1,13 +1,13 @@
 body {
     font-family: 'Nunito', Arial, sans-serif;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: linear-gradient(135deg, #ffffff, #2e2e2ec9);
     margin: 0;
     color: #fff;
 }
 .admin-wrapper {
     max-width: 800px;
     margin: 32px auto;
-    background: rgba(255,255,255,0.08);
+    background: rgb(44, 37, 39);
     border-radius: 16px;
     box-shadow: 0 12px 32px rgba(0,0,0,0.16);
     padding: 24px;
@@ -127,4 +127,14 @@ footer {
         padding: 8px;
         max-width: 98vw;
     }
+}
+
+/* Spinner icon color */
+.fa-spinner {
+    color: #e2dfff;
+}
+
+/* Badge for vector DB used PDFs */
+.vector-card span {
+    font-size: 0.97rem;
 }
