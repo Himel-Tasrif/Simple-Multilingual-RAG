@@ -16,3 +16,4 @@ python-multipart
 openai
 PyMuPDF
 faiss-cpu
+rank_bm25
