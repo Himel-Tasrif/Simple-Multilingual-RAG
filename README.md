@@ -255,11 +255,15 @@ http://127.0.0.1:8002/
 
 ---
 
-## 9. **Sample Video References**
+## 9. **Sample Video References and Output**
 
 - [Text extraction challenges & solution (video)](https://drive.google.com/file/d/1cDfPEe-1R2SKpLhLnrjoydYknayfWKGT/view?usp=sharing)
 - [ Frontend and debugging (video)](https://drive.google.com/file/d/1Pk2J8W8jopMIysaVnyqN5c8D5Ug3ycNa/view?usp=sharing) 
 - [REST API & Live query and answering demo (video)](https://drive.google.com/file/d/1FGCQDhv9X11UlWrxfberO68R2-ACBWEm/view?usp=sharing)
+
+#### Output:
+![Demo-1](./static/images/img01.png)
+
 ---
 
 ## 10. **Assessment Q&A**
@@ -302,4 +306,6 @@ For further queries, collaboration, or to see more of my work, please visit my [
 
 ---
 
+## Licence & Credits
+All rights reserved by ©[Tasrif Nur Himel](tasrifnurhimel.me)
 **Thank you for reviewing my assessment!**
