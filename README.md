@@ -1,1 +1,202 @@
-This Repositrory is for 10 Min School and developed by Tasrif Nur Himel
+# Simple Multilingual RAG — Setup & Usage Guidelines
+
+Welcome to the **Simple Multilingual RAG** project! This document provides a comprehensive guide for HR, reviewers, or engineers to understand, run, and evaluate the system as per the technical assessment from Ten Minute School.
+
+---
+
+## 1. **Project Structure Overview**
+
+```
+Simple-Multilingual-RAG/
+│
+├── main.py                  # Core FastAPI backend (REST API, RAG logic, chat)
+├── test.py                  # Text extraction & chunking debugger (outputs raw/chunked text)
+├── mcq_data.json            # MCQ questions/options/answers as structured data for extra reasoning
+├── .env                     # Environment variables/settings (OpenAI key, etc.)
+│
+├── vectorstore/
+│   └── vec_db/
+│       ├── index.faiss      # FAISS vector index (vectorized chunks for retrieval)
+│       └── index.pkl        # Mapping and metadata for chunk-to-original-text mapping
+│
+├── data/
+│   └── uploaded_pdfs/       # Uploaded source PDFs (original, not directly used at runtime)
+│
+├── debug_outputs/           # Created by test.py: extracted raw and chunked text for inspection
+│
+├── templates/               # HTML templates for web frontend (chat, admin, index)
+│   ├── index.html
+│   ├── admin.html
+│   └── chat.html
+│
+├── static/                  # Static files for the frontend UI
+│   ├── styles/
+│   │   ├── index.css
+│   │   ├── admin.css
+│   │   └── chat.css
+│   ├── js/
+│   │   ├── admin.js
+│   │   └── chat.js
+│   └── images/
+│       └── 10_Minute_School_Logo.svg.png
+│
+├── requirements.txt         # All required Python packages/libraries
+└── README.md                # Main documentation (to be created after this guidelines doc)
+```
+
+---
+
+## 2. **Folder and File Clarification**
+
+- **main.py**: The main backend application (FastAPI). Implements REST API endpoints for chat, PDF management, and vector DB.
+- **test.py**: Utility for debugging text extraction and chunking. Outputs `.txt` files to `debug_outputs/` for QA.
+- **mcq_data.json**: JSON with MCQ questions/options/answers for more accurate MCQ handling.
+- **.env**: Store your API keys and settings (not uploaded for security).
+- **vectorstore/vec_db/index.faiss**: The FAISS vector index file, used for fast semantic search of document chunks.
+- **vectorstore/vec_db/index.pkl**: Python pickle file mapping chunk IDs to their original text and metadata (for context retrieval).
+- **data/uploaded_pdfs/**: Stores uploaded PDF files (raw, not required at runtime if vector DB exists).
+- **debug_outputs/**: Where `test.py` saves extracted and chunked text for inspection/debugging.
+- **templates/**: Contains all HTML files for the web interface (no external frameworks like Gradio/Streamlit used).
+- **static/**: Contains styles, JavaScript, and images for the web UI.
+- **requirements.txt**: All dependencies (see below for details).
+- **README.md**: Main project documentation—setup, sample queries, answers, evaluation, and Q&A.
+
+---
+
+## 3. **Environment & Requirements**
+
+- **Python version:** `3.12.x` (where x = any micro version of Python 3.12)
+- **Install dependencies:** All necessary packages are listed in `requirements.txt`.
+
+---
+
+## 4. **Setup & Running the System**
+
+### **A. Clone the Repository**
+```sh
+git clone https://github.com/Himel-Tasrif/Simple-Multilingual-RAG.git
+cd Simple-Multilingual-RAG
+```
+
+### **B. Create and Activate a Virtual Environment**
+```sh
+python3.12 -m venv venv
+# Activate on Linux/Mac
+source venv/bin/activate
+# Activate on Windows
+venv\Scripts\activate
+```
+
+### **C. Install Python Dependencies**
+```sh
+pip install -r requirements.txt
+```
+
+### **D. Environment Variables**
+- Create a `.env` file with your OpenAI API key and any other required settings. Example:
+  ```
+  OPENAI_API_KEY=sk-...
+  ```
+
+### **E. Vectorstore/Knowledge Base**
+- **No need to create a new vector DB or upload PDFs:**  
+  The `vectorstore/vec_db/` folder already contains a pre-built FAISS index (`index.faiss`, `index.pkl`).  
+  You can start chatting immediately.
+
+### **F. Run the Application**
+```sh
+python main.py
+```
+- This will start the FastAPI server (default: `http://127.0.0.1:8002`).
+
+### **G. Access the Chat Interface**
+- Open your browser and go to:  
+  `http://127.0.0.1:8002/chat`
+
+---
+
+## 5. **Frontend**
+
+- Custom HTML/CSS/JS frontend (no Gradio/Streamlit/Chainlit, as these are not designed for production).
+- Chat interface is responsive and supports Bangla/English queries.
+- All assets are in `templates/` and `static/`.
+
+---
+
+## 6. **REST API**
+
+- **/api/chat** (POST): Accepts user queries and chat history, returns model-generated responses (streamed).
+- **/api/vector_db_status** (GET): Shows if the vector DB is ready.
+- **Admin endpoints:** For PDF upload, listing, download, and vector DB creation (not needed for normal usage).
+
+**Why REST API?**  
+- Industry-standard for scalable, secure, production-ready services.
+- Decouples backend and frontend (any client can use your API).
+- Enables Ten Minute School to integrate with their platform, mobile app, or other tools.
+
+---
+
+## 7. **Vectorstore Details**
+
+- **index.faiss:** Contains the semantic embeddings of all document chunks, enabling fast nearest-neighbor search.
+- **index.pkl:** Stores metadata mapping the FAISS vectors back to the original chunk text, so the system can reconstruct the original context for each retrieval.
+
+---
+
+## 8. **Debugging Extraction & Chunking**
+
+- Run `python test.py` to create/debug extracted text and chunked outputs in `debug_outputs/`.
+- This is for developers to inspect quality of extraction/chunking—**not needed for normal usage**.
+
+---
+
+## 9. **Sample Video References**
+
+- [Text extraction challenges & solution (video)](https://drive.google.com/file/d/1cDfPEe-1R2SKpLhLnrjoydYknayfWKGT/view?usp=sharing)
+- [REST API & frontend debugging (video)](https://drive.google.com/file/d/1cDfPEe-1R2SKpLhLnrjoydYknayfWKGT/view?usp=sharing) *(update to actual link if different)*
+- [Live query and answering demo (video)](https://drive.google.com/file/d/1cDfPEe-1R2SKpLhLnrjoydYknayfWKGT/view?usp=sharing) *(update to actual link if different)*
+
+---
+
+## 10. **Portfolio**
+
+For more of my work, projects, and AI experience, please visit my [portfolio](#) *(replace # with your actual portfolio link)* and explore further!
+
+---
+
+## 11. **Assessment Q&A**
+
+**Q1. What method or library did you use to extract text, and why? Did you face any formatting challenges with the PDF content?**  
+- Used `langchain_community.document_loaders.PyMuPDFLoader` for robust text extraction (handles Bangla PDF well).
+- Faced some challenges with formatting (Bangla ligatures, line breaks, MCQ formatting).  
+- Solved by reviewing extracted text using `test.py` and adjusting pre-processing.
+
+**Q2. What chunking strategy did you choose? Why?**  
+- Used `RecursiveCharacterTextSplitter` (character-based, chunk_size=500, overlap=100).
+- Works well for semantic retrieval because it balances context size and retrieval precision, and preserves story/MCQ context.
+
+**Q3. What embedding model did you use? Why?**  
+- Used `OpenAIEmbeddings` (`text-embedding-3-large`), for high multilingual support and best-in-class semantic understanding for both Bangla and English.
+
+**Q4. How are you comparing the query with your stored chunks? Why this method?**  
+- Hybrid retrieval: BM25 (sparse lexical) + FAISS (dense semantic).
+- FAISS enables semantic similarity, BM25 ensures keyword/option matching (crucial for MCQ and Bangla variations).
+- This hybrid ensures both relevance and coverage.
+
+**Q5. How do you ensure meaningful comparison? What about vague/missing context?**  
+- By using both recent chat history (short-term memory) and document vectorstore (long-term memory).
+- If the query is vague, semantic retrieval plus MCQ reference still often finds relevant context; if not, the model says it cannot answer.
+
+**Q6. Are results relevant? What could improve them?**  
+- Most results are highly relevant (see sample outputs in README).
+- Further improvement: more advanced chunking (sentence/paragraph), better embedding models, or a larger knowledge base.
+
+---
+
+## 12. **Contact**
+
+For further queries, collaboration, or to see more of my work, please visit my [GitHub](https://github.com/Himel-Tasrif) or my [portfolio](tasrifnurhimel.me).
+
+---
+
+**Thank you for reviewing my assessment!**
