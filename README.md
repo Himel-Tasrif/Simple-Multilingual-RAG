@@ -97,6 +97,39 @@ pip install -r requirements.txt
   ```
   OPENAI_API_KEY=sk-...
   ```
+#### - **How to Get and Use an OpenAI API Key**
+
+To use this project, you need an OpenAI API key to access GPT-4o and embeddings.
+
+#### - **Step-by-Step OpenAI API Key Purchase/Setup**
+
+#### **A. Sign Up / Sign In**
+1. Go to the official OpenAI website: [https://platform.openai.com/](https://platform.openai.com/)
+2. Click **Sign Up** to create an account, or **Sign In** if you already have one.
+
+#### **B. Add Billing / Payment**
+1. After login, click your profile icon (top right) and select **Manage Account**.
+2. Go to the **Billing** section.
+3. Add a payment method (credit/debit card or other supported options).
+4. Complete any required verification.
+5. Once payment is set up, you can purchase OpenAI API credits or set up a usage-based plan.
+
+#### **C. Create an API Key**
+1. In the OpenAI dashboard, click on your profile (top right) and select **View API Keys** or go to [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys).
+2. Click **Create new secret key**.
+3. Give your key a name (e.g., "test01").
+4. Copy the generated API key **immediately** (it will not be shown again).
+
+#### **D. Use the API Key in this Project**
+1. Create a file named `.env` in the root of your project if it doesn’t exist.
+2. Add your key like this:
+    ```
+    OPENAI_API_KEY=sk-......................................
+    ```
+3. **Never share your API key publicly.** Treat it like a password.
+
+---
+
 
 ### **E. Vectorstore/Knowledge Base**
 - **No need to create a new vector DB or upload PDFs:**  
