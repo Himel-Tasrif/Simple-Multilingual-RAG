@@ -156,7 +156,7 @@ Your Answer:
 def load_hybrid_retriever():
     embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
     db = FAISS.load_local(DB_FAISS, embeddings, allow_dangerous_deserialization=True)
-    dense_retriever = db.as_retriever(search_kwargs={"k": 4})
+    dense_retriever = db.as_retriever(search_kwargs={"k": 5})
 
     # Build BM25 from same docs
     loader = PyMuPDFLoader(os.path.join(DATA_PATH, os.listdir(DATA_PATH)[0]))
