@@ -179,8 +179,11 @@ uvicorn main:app --port 8002 --reload
 
 #### Demo Screenshots
 
-| Chat Interface | Admin Panle (Knowledge Base) |
-| ![Demo-1](./static/images/img02.png) | ![Demo-1](./static/images/img04.png) |
+| Chat Interface |
+| ![Demo-1](./static/images/img02.png) | 
+
+| Admin Panle (Knowledge Base) |
+| ![Demo-1](./static/images/img04.png) |
 
 ---
 
@@ -296,16 +299,16 @@ http://127.0.0.1:8002/
 ---
 ## 10. **Portfolio**
 
-For more of my work, projects, and AI experience, please visit my [portfolio](tasrifnurhimel.me) and explore further!
+For more of my work, projects, and AI experience, please visit my [portfolio](https://www.tasrifnurhimel.me) and explore further!
 
 ---
 
 ## 12. **Contact**
 
-For further queries, collaboration, or to see more of my work, please visit my [GitHub](https://github.com/Himel-Tasrif) or my [portfolio](tasrifnurhimel.me).
+For further queries, collaboration, or to see more of my work, please visit my [GitHub](https://github.com/Himel-Tasrif) or my [portfolio](https://www.tasrifnurhimel.me).
 
 ---
 
 ## Licence & Credits
-All rights reserved by ©[Tasrif Nur Himel](tasrifnurhimel.me)
+All rights reserved by ©[Tasrif Nur Himel](https://www.tasrifnurhimel.me)
 **Thank you for reviewing my assessment!**
