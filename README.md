@@ -2,6 +2,7 @@
 
 Welcome to the **Simple Multilingual RAG** project! This document provides a comprehensive guide for HR, reviewers, or engineers to understand, run, and evaluate the system as per the technical assessment from Ten Minute School.
 
+![Simple Multilingual RAG](./static/images/img03.png)
 ---
 
 ## 1. **Project Structure Overview**
@@ -80,11 +81,19 @@ cd Simple-Multilingual-RAG
 
 ### **B. Create and Activate a Virtual Environment**
 ```sh
-python3.12 -m venv venv
+python3.12 -m venv tenminschool
+```
+```sh
 # Activate on Linux/Mac
-source venv/bin/activate
+source tenminschool/bin/activate
+```
+```sh
 # Activate on Windows
 venv\Scripts\activate
+```
+```sh
+# Windows Gitbash
+source tenminschool/Scripts/activate
 ```
 
 ### **C. Install Python Dependencies**
@@ -93,14 +102,12 @@ pip install -r requirements.txt
 ```
 
 ### **D. Environment Variables**
+To use this project, you need an OpenAI API key to access GPT-4o and embeddings.
 - Create a `.env` file with your OpenAI API key and any other required settings. Example:
   ```
   OPENAI_API_KEY=sk-...
   ```
 #### - **How to Get and Use an OpenAI API Key**
-
-To use this project, you need an OpenAI API key to access GPT-4o and embeddings.
-
 #### - **Step-by-Step OpenAI API Key Purchase/Setup**
 
 #### **A. Sign Up / Sign In**
@@ -108,7 +115,7 @@ To use this project, you need an OpenAI API key to access GPT-4o and embeddings.
 2. Click **Sign Up** to create an account, or **Sign In** if you already have one.
 
 #### **B. Add Billing / Payment**
-1. After login, click your profile icon (top right) and select **Manage Account**.
+1. After login, click Start Building icon (top right) and do all formalities. (If you already have then just go to Billing section)
 2. Go to the **Billing** section.
 3. Add a payment method (credit/debit card or other supported options).
 4. Complete any required verification.
