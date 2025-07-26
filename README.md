@@ -180,10 +180,10 @@ uvicorn main:app --port 8002 --reload
 #### Demo Screenshots
 
 | Chat Interface |
-| ![Demo-1](./static/images/img02.png) | 
+![Demo-1](./static/images/img02.png)
 
 | Admin Panle (Knowledge Base) |
-| ![Demo-1](./static/images/img04.png) |
+![Demo-1](./static/images/img04.png)
 
 ---
 
