@@ -89,7 +89,7 @@ source tenminschool/bin/activate
 ```
 ```sh
 # Activate on Windows
-venv\Scripts\activate
+tenminschool\Scripts\activate
 ```
 ```sh
 # Windows Gitbash
@@ -177,6 +177,11 @@ uvicorn main:app --port 8002 --reload
 - Chat interface is responsive and supports Bangla/English queries.
 - All assets are in `templates/` and `static/`.
 
+#### Demo Screenshots
+
+| Chat Interface | Admin Panle (Knowledge Base) |
+| ![Demo-1](./static/images/img02.png) | ![Demo-1](./static/images/img04.png) |
+
 ---
 
 ## 6. **REST API**
@@ -189,6 +194,50 @@ uvicorn main:app --port 8002 --reload
 - Industry-standard for scalable, secure, production-ready services.
 - Decouples backend and frontend (any client can use your API).
 - Enables Ten Minute School to integrate with their platform, mobile app, or other tools.
+
+**API Documentation (REST Endpoints)**
+
+- **Base URL**
+
+```
+http://127.0.0.1:8002/
+```
+
+- **Endpoints**
+
+#### **1. `/api/chat` — Main Chat Endpoint**
+
+- **Method:** POST
+- **Description:** Accepts chat history and user query, returns model-generated answer (streamed).
+- **Request Example:**
+    ```json
+    {
+      "history": [
+        {"role": "user", "content": "অনুপমের ভাষায় সুপুরুষ কাকে বলা হয়েছে?"}
+      ]
+    }
+    ```
+- **Response:** (streamed text)
+    ```
+    শুম্ভুনাথ
+    ```
+
+#### **2. `/api/vector_db_status` — Vector DB Ready Check**
+
+- **Method:** GET
+- **Description:** Returns JSON indicating whether the vector database is present and ready.
+- **Response:**
+    ```json
+    { "exists": true }
+    ```
+
+#### **3. **Admin Endpoints (for development/maintenance)**
+- `/admin/upload_pdf/` — Upload (multiple) PDFs for knowledge base (POST, multipart).
+- `/admin/list_pdfs/` — List all uploaded PDFs (GET).
+- `/admin/download_pdf/?filename=...` — Download a specific PDF (GET).
+- `/admin/generate_vector_db/` — (Re)generate the vector database from uploaded PDFs (POST).
+
+**Note:** For normal users, admin endpoints are not needed—vector DB is pre-built.
 
 ---
 
