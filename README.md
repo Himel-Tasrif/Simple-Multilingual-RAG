@@ -105,13 +105,29 @@ pip install -r requirements.txt
 
 ### **F. Run the Application**
 ```sh
-python main.py
+uvicorn main:app --port 8002 --reload
 ```
 - This will start the FastAPI server (default: `http://127.0.0.1:8002`).
 
 ### **G. Access the Chat Interface**
 - Open your browser and go to:  
   `http://127.0.0.1:8002/chat`
+
+- Guide :
+        1. Click on http://127.0.0.1:8002   (It Open Home Page)
+
+
+        2. You don’t need deal with vectorDB as i already created your can see those inside vectorstore/vec_db folder
+
+
+        3. From Homepage click in Chat Assistance   (It will open chat interface http://127.0.0.1:8002/chat)
+
+
+        4. Type question in Bangla or English (or Banglish)
+
+
+        5. Get reasoning-based answer (AI reads story context, explains, picks correct answer)
+
 
 ---
 
