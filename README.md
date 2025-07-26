@@ -153,18 +153,11 @@ python main.py
 ## 9. **Sample Video References**
 
 - [Text extraction challenges & solution (video)](https://drive.google.com/file/d/1cDfPEe-1R2SKpLhLnrjoydYknayfWKGT/view?usp=sharing)
-- [REST API & frontend debugging (video)](https://drive.google.com/file/d/1cDfPEe-1R2SKpLhLnrjoydYknayfWKGT/view?usp=sharing) *(update to actual link if different)*
-- [Live query and answering demo (video)](https://drive.google.com/file/d/1cDfPEe-1R2SKpLhLnrjoydYknayfWKGT/view?usp=sharing) *(update to actual link if different)*
-
+- [ Frontend and debugging (video)](https://drive.google.com/file/d/1Pk2J8W8jopMIysaVnyqN5c8D5Ug3ycNa/view?usp=sharing) 
+- [REST API & Live query and answering demo (video)](https://drive.google.com/file/d/1FGCQDhv9X11UlWrxfberO68R2-ACBWEm/view?usp=sharing)
 ---
 
-## 10. **Portfolio**
-
-For more of my work, projects, and AI experience, please visit my [portfolio](#) *(replace # with your actual portfolio link)* and explore further!
-
----
-
-## 11. **Assessment Q&A**
+## 10. **Assessment Q&A**
 
 **Q1. What method or library did you use to extract text, and why? Did you face any formatting challenges with the PDF content?**  
 - Used `langchain_community.document_loaders.PyMuPDFLoader` for robust text extraction (handles Bangla PDF well).
@@ -190,6 +183,11 @@ For more of my work, projects, and AI experience, please visit my [portfolio](#)
 **Q6. Are results relevant? What could improve them?**  
 - Most results are highly relevant (see sample outputs in README).
 - Further improvement: more advanced chunking (sentence/paragraph), better embedding models, or a larger knowledge base.
+
+---
+## 10. **Portfolio**
+
+For more of my work, projects, and AI experience, please visit my [portfolio](tasrifnurhimel.me) and explore further!
 
 ---
 
