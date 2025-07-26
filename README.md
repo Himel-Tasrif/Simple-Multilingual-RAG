@@ -267,6 +267,8 @@ http://127.0.0.1:8002/
 #### Output:
 ![Demo-1](./static/images/img01.png)
 
+#### If user asked any irrelevant question my model not answer those check this image
+![Demo-1](./static/images/img05.png) 
 ---
 
 ## 10. **Assessment Q&A**
